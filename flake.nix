@@ -14,21 +14,21 @@
   outputs = { self, nixpkgs, futils, home-manager }@inputs: {
 
     nixosConfigurations =
-    let
-      system = "x86_64-linux";
-    in
-    (import ./nixos/images { inherit system inputs; });
-  } // (futils.lib.eachDefaultSystem (system:
       let
-        pkgs = (import nixpkgs { inherit system; });
+        system = "x86_64-linux";
       in
-      {
-  	devShells.default = pkgs.mkShell {
-		nativeBuildInputs = with pkgs; [ bashInteractive ];
-        	buildInputs = with pkgs; [
-          		nil
-          		nixpkgs-fmt
-        	];
-      	};
-      }));
+      (import ./nixos/images { inherit system inputs; });
+  } // (futils.lib.eachDefaultSystem (system:
+    let
+      pkgs = (import nixpkgs { inherit system; });
+    in
+    {
+      devShells.default = pkgs.mkShell {
+        nativeBuildInputs = with pkgs; [ bashInteractive ];
+        buildInputs = with pkgs; [
+          nil
+          nixpkgs-fmt
+        ];
+      };
+    }));
 }
