@@ -1,8 +1,15 @@
-{ self, pkgs, lib, config, ... }:
+{ self, pkgs, lib, config, home-manager, ... }:
 
 {
   imports = [
     ../modules/hardware/thinkpad.nix
+    home-manager.nixosModules.home-manager
+    {
+      home-manager.extraSpecialArgs = {
+        pkgs = pkgs;
+      };
+      home-manager.users.adrien = import ../home/users/adrien/adrien_thinkpad.nix;
+    }
   ];
 
   users.users.adrien = {
