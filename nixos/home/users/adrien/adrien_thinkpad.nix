@@ -107,5 +107,6 @@
     ../../programs/git.nix
     ../../programs/gpg.nix
     ../../programs/zsh.nix
+    ../../programs/neovim.nix
   ];
 }
