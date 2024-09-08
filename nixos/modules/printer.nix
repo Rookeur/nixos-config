@@ -1,17 +1,13 @@
 { self, ... }:
 
 {
-  services.printing = {
+  services.avahi = {
     enable = true;
-    browsing = true;
-    browsedConf = ''
-      BrowseDNSSDSubTypes _cups,_print
-      BrowseLocalProtocols all
-      BrowseRemoteProtocols all
-      CreateIPPPrinterQueues All
-
-      BrowseProtocols all
-    '';
+    nssmdns = true;
+    openFirewall = true;
   };
 
+  services.printing = {
+    enable = true;
+  };
 }

@@ -39,3 +39,5 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.updatetime = 300
 vim.opt.timeoutlen = 300
 vim.opt.tildeop = true
+
+vim.g.lazyvim_picker = "telescope"

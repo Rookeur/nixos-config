@@ -1,4 +1,4 @@
-{ self, pkgs, lib, config, home-manager, ... }:
+{ self, pkgs, lib, config, home-manager, writeShellScriptBin, ... }:
 
 {
   imports = [
@@ -35,6 +35,7 @@
       127.0.0.1 net2.example.org
       127.0.0.1 rookeur.org
       127.0.0.1 oidc-provider
+      100.64.5.100 console.storage.prologin.eu
     '';
     nftables = {
       enable = true;

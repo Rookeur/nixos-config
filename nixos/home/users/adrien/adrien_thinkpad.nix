@@ -25,7 +25,7 @@
     bitwarden
     blueman
     brightnessctl
-    cargo
+    rustup
     chromium
     clang-tools
     conky
