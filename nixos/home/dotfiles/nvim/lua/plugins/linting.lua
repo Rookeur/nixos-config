@@ -10,7 +10,7 @@ return {
       json = { "jsonlint" },
       gitcommit = { "commitlint" },
       cmake = { "cmakelint" },
-      ["*"] = { "write_good", "typos" },
+      -- ["*"] = { "write_good", "typos" },
     },
     linters = {
       ansible_lint = {
